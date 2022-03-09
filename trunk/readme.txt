@@ -4,7 +4,7 @@ Donate link: https://paypal.me/neotrendy
 Tags: anti-spam, email, obfuscation, obfuscate, protect, encode
 Requires at least: 2.5
 Tested up to: 5.9
-Stable tag: 0.9.0
+Stable tag: 0.9.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -13,7 +13,7 @@ Email Address Obfuscation prevents email harvesting by hiding email address appe
 
 == Description ==
 
-A lightweight plugin that protects email addresses from email-harvesting bots, by converting email addresses characters to HTML entities. Hide email from Spam Bots using a shortcode `[email_obfuscate]` and built-in WordPress function [antispambot()](https://developer.wordpress.org/reference/functions/antispambot/ "antispambot").
+A lightweight plugin that protects email addresses from email-harvesting bots, by converting email addresses characters to HTML entities. Hide email from Spam Bots using a shortcode `[obfuscate_email]` and built-in WordPress function [antispambot()](https://developer.wordpress.org/reference/functions/antispambot/ "antispambot").
 
 = Features =
 
@@ -25,15 +25,15 @@ A lightweight plugin that protects email addresses from email-harvesting bots, b
 
 **Obfuscate plain email address**
 
-    [email_obfuscate email="your@email.com"]
+    [obfuscate_email email="your@email.com"]
 
 **Create clickable email address**
 
-    [email_obfuscate email="your@email.com" link=true]
+    [obfuscate_email email="your@email.com" link=true]
 
 **Add CSS class to the HTML anchor element**
 
-    [email_obfuscate email="your@email.com" link=true class="my-class another-class"]
+    [obfuscate_email email="your@email.com" link=true class="my-class another-class"]
 
 = Shortcode parameter =
 
@@ -45,7 +45,7 @@ A lightweight plugin that protects email addresses from email-harvesting bots, b
 
 = How does it work? =
 
-The plugin converts email addresses characters from `email` parameter of `[email_obfuscate]` shortcode to HTML entities. Email addresses on your web page will be obfuscated (hidden) from bots, while keeping them visible to humans. In fact, there are no visible changes to your website for visitors.
+The plugin converts email addresses characters from `email` parameter of `[obfuscate_email]` shortcode to HTML entities. Email addresses on your web page will be obfuscated (hidden) from bots, while keeping them visible to humans. In fact, there are no visible changes to your website for visitors.
 
 = How can check if the plugin works? =
 
@@ -61,10 +61,16 @@ View source code of your page (press `Ctrl + U` in web browser) and look for the
 
 == Changelog ==
 
+= 0.9.1 =
+* Shortcode changed from email_obfuscate to obfuscate_email,
+
 = 0.9.0 =
 * Release Candidate.
 
 == Upgrade Notice ==
+
+= 0.9.1 =
+Upload to plugin hosting.
 
 = 0.9.0 =
 Initial release.
