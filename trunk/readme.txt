@@ -3,8 +3,8 @@ Contributors: neotrendy
 Donate link: https://paypal.me/neotrendy
 Tags: anti-spam, email, obfuscation, obfuscate, protect, encode
 Requires at least: 2.5
-Tested up to: 5.9
-Stable tag: 0.9.1
+Tested up to: 6.0.3
+Stable tag: 0.9.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,8 +61,11 @@ View source code of your page (press `Ctrl + U` in web browser) and look for the
 
 == Changelog ==
 
+= 0.9.2 =
+* Tested compatibility with WordPress 6.0.3.
+
 = 0.9.1 =
-* Shortcode changed from email_obfuscate to obfuscate_email,
+* Shortcode changed from email_obfuscate to obfuscate_email.
 
 = 0.9.0 =
 * Release Candidate.

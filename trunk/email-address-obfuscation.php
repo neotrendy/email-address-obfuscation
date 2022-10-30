@@ -10,7 +10,7 @@
  * @wordpress-plugin
  * Plugin Name:       Email Address Obfuscation
  * Description:       Email Address Obfuscation prevents email harvesting by hiding email address appearing in your pages, while remaining visible to your site visitors.
- * Version:           0.9.1
+ * Version:           0.9.2
  * Requires at least: 2.5
  * Requires PHP:      5.6
  * Author:            Neotrendy
