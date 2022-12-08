@@ -3,8 +3,8 @@ Contributors: neotrendy
 Donate link: https://paypal.me/neotrendy
 Tags: anti-spam, email, obfuscation, obfuscate, protect, encode
 Requires at least: 2.5
-Tested up to: 6.0.3
-Stable tag: 0.9.2
+Tested up to: 6.1.1
+Stable tag: 1.0.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,10 @@ View source code of your page (press `Ctrl + U` in web browser) and look for the
 
 == Changelog ==
 
+= 1.0.0 =
+* Tested compatibility with WordPress 6.1.1.
+* Added translation folder and POT file.
+
 = 0.9.2 =
 * Tested compatibility with WordPress 6.0.3.
 
@@ -71,6 +75,12 @@ View source code of your page (press `Ctrl + U` in web browser) and look for the
 * Release Candidate.
 
 == Upgrade Notice ==
+
+= 1.0.0 =
+Tested compatibility with WordPress 6.1.1. Added translation folder and POT file.
+
+= 0.9.2 =
+Tested compatibility with WordPress 6.0.3.
 
 = 0.9.1 =
 Upload to plugin hosting.
