@@ -19,6 +19,15 @@ https://developer.wordpress.org/plugins/wordpress-org/how-to-use-subversion/
 
     svn stat
     svn diff
+    svn stat --no-ignore
+
+### Add files to the SVN
+
+    svn add .\trunk\filename
+
+### Ignore files from SVN
+
+    svn propset svn:ignore -F .svnignore .
 
 ###  Check in changes to the central repository
 
