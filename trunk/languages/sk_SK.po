@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Email Address Obfuscation 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/trunk\n"
-"POT-Creation-Date: 2023-04-15T14:05:49+02:00\n"
-"PO-Revision-Date: 2023-04-15 14:06+0200\n"
+"POT-Creation-Date: 2024-10-31T19:57:55+00:00\n"
+"PO-Revision-Date: 2024-10-31 20:59+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sk_SK\n"
@@ -13,14 +13,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Domain: email-address-obfuscation\n"
 
 #. Plugin Name of the plugin
+#: email-address-obfuscation.php
 msgid "Email Address Obfuscation"
 msgstr ""
 
 #. Description of the plugin
+#: email-address-obfuscation.php
 msgid ""
 "Email Address Obfuscation prevents email harvesting by hiding email address "
 "appearing in your pages, while remaining visible to your site visitors."
@@ -30,9 +32,11 @@ msgstr ""
 "návštevníkov vašej webstránky."
 
 #. Author of the plugin
+#: email-address-obfuscation.php
 msgid "Neotrendy"
 msgstr ""
 
 #. Author URI of the plugin
+#: email-address-obfuscation.php
 msgid "https://www.neotrendy.com"
 msgstr ""

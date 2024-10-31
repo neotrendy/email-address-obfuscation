@@ -1,4 +1,4 @@
-# Copyright (C) 2023 Neotrendy
+# Copyright (C) 2024 Neotrendy
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
@@ -9,23 +9,27 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-04-15T14:05:49+02:00\n"
+"POT-Creation-Date: 2024-10-31T19:57:55+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.7.1\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: email-address-obfuscation\n"
 
 #. Plugin Name of the plugin
+#: email-address-obfuscation.php
 msgid "Email Address Obfuscation"
 msgstr ""
 
 #. Description of the plugin
+#: email-address-obfuscation.php
 msgid "Email Address Obfuscation prevents email harvesting by hiding email address appearing in your pages, while remaining visible to your site visitors."
 msgstr ""
 
 #. Author of the plugin
+#: email-address-obfuscation.php
 msgid "Neotrendy"
 msgstr ""
 
 #. Author URI of the plugin
+#: email-address-obfuscation.php
 msgid "https://www.neotrendy.com"
 msgstr ""

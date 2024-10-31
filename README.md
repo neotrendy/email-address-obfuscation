@@ -28,6 +28,7 @@ https://developer.wordpress.org/plugins/wordpress-org/how-to-use-subversion/
 ### Ignore files from SVN
 
     svn propset svn:ignore -F .svnignore .
+    svn propset svn:ignore -F assets/.svnignore assets/
 
 ###  Check in changes to the central repository
 

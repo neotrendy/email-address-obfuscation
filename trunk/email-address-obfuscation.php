@@ -4,7 +4,7 @@
  *
  * @package           EmailAddressObfuscation
  * @author            Neotrendy
- * @copyright         2022-2023 Neotrendy s.r.o.
+ * @copyright         2022-2024 Neotrendy s.r.o.
  * @license           GPL-2.0-or-later
  *
  * @wordpress-plugin
@@ -16,6 +16,7 @@
  * Author:            Neotrendy
  * Author URI:        https://www.neotrendy.com
  * Text Domain:       email-address-obfuscation
+ * Domain Path:       /languages
  * License:           GPL v2 or later
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */

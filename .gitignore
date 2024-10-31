@@ -8,4 +8,5 @@
 Thumbs.db
 
 /assets/*
+!/assets/.svnignore
 /tags/*
