@@ -3,8 +3,8 @@ Contributors: neotrendy
 Donate link: https://paypal.me/neotrendy
 Tags: anti-spam, email, obfuscation, obfuscate, protect
 Requires at least: 2.5
-Tested up to: 6.7
-Stable tag: 1.0.1
+Tested up to: 6.7.1
+Stable tag: 1.1.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -60,6 +60,10 @@ View source code of your page (press `Ctrl + U` in web browser) and look for the
 3. Obfuscated email address in source code.
 
 == Changelog ==
+
+= 1.1.0 =
+* Security Fix: Resolved a Stored Cross-Site Scripting (XSS) vulnerability in the `class` parameter of the shortcode, allowing Contributor+ users to inject malicious scripts. (CVE-2024-11935 | Reported by theviper17y)
+* Minor code improvements and optimizations.
 
 = 1.0.1 =
 * Tested compatibility with WordPress 6.2.

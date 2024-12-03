@@ -10,7 +10,7 @@
  * @wordpress-plugin
  * Plugin Name:       Email Address Obfuscation
  * Description:       Email Address Obfuscation prevents email harvesting by hiding email address appearing in your pages, while remaining visible to your site visitors.
- * Version:           1.0.1
+ * Version:           1.1.0
  * Requires at least: 2.5
  * Requires PHP:      5.6
  * Author:            Neotrendy
@@ -25,19 +25,31 @@
  * Adds shortcode to obfuscate email address.
  *
  * @param array $atts Associative array of attribute name and value pairs.
+ *
  * @return string Converted email address or HTML anchor element.
  */
 function neotrendy_email_address_obfuscation_shortcode( $atts ) {
-    $atts = shortcode_atts( array(
-        'email' => '',
-        'link' => false,
-        'class' => '',
-    ), $atts );
+	$atts = shortcode_atts( array(
+		'email' => '',
+		'link'  => false,
+		'class' => '',
+	), $atts, 'obfuscate_email' );
 
-    if ( $atts['link'] ) {
-        return sprintf( '<a href="mailto:%1$s" title="%1$s" class="%2$s">%1$s</a>', antispambot( $atts['email'] ), $atts['class']);
-    } else {
-        return antispambot( $atts['email'] );
-    }
+	$email = sanitize_email( $atts['email'] );
+
+	if ( empty( $email ) ) {
+		return '';
+	}
+
+	$obfuscated_email = antispambot( $email );
+
+	if ( filter_var( $atts['link'], FILTER_VALIDATE_BOOLEAN ) ) {
+		$class = ! empty( $atts['class'] ) ? ' class="' . esc_attr( $atts['class'] ) . '"' : '';
+
+		return sprintf( '<a href="mailto:%1$s" title="%1$s"%2$s>%1$s</a>', $obfuscated_email, $class );
+	}
+
+	return $obfuscated_email;
 }
+
 add_shortcode( 'obfuscate_email', 'neotrendy_email_address_obfuscation_shortcode' );
