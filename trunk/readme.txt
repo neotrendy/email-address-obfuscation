@@ -4,7 +4,7 @@ Donate link: https://paypal.me/neotrendy
 Tags: anti-spam, email, obfuscation, obfuscate, protect
 Requires at least: 2.5
 Tested up to: 6.7.1
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -20,6 +20,7 @@ A lightweight plugin that protects email addresses from email-harvesting bots, b
 * Obfuscate plain email address
 * Obfuscate href mailto link in HTML anchor element
 * Support for custom CSS class
+* Support for email subject
 
 = Usage =
 
@@ -34,6 +35,10 @@ A lightweight plugin that protects email addresses from email-harvesting bots, b
 **Add CSS class to the HTML anchor element**
 
     [obfuscate_email email="your@email.com" link=true class="my-class another-class"]
+
+**Obfuscate email address with email subject**
+
+    [obfuscate_email email='your@email.com?subject=My custom email subject']
 
 = Shortcode parameter =
 
@@ -60,6 +65,9 @@ View source code of your page (press `Ctrl + U` in web browser) and look for the
 3. Obfuscated email address in source code.
 
 == Changelog ==
+
+= 1.2.0 =
+* Added support for email subject.
 
 = 1.1.0 =
 * Security Fix: Resolved a Stored Cross-Site Scripting (XSS) vulnerability in the `class` parameter of the shortcode, allowing Contributor+ users to inject malicious scripts. (CVE-2024-11935 | Reported by theviper17y)
