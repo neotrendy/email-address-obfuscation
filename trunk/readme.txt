@@ -3,7 +3,7 @@ Contributors: neotrendy
 Donate link: https://paypal.me/neotrendy
 Tags: anti-spam, email, obfuscation, obfuscate, protect
 Requires at least: 2.5
-Tested up to: 6.8
+Tested up to: 6.9
 Stable tag: 1.2.0
 Requires PHP: 5.6
 License: GPLv2 or later
