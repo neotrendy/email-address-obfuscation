@@ -15,7 +15,7 @@ https://developer.wordpress.org/plugins/wordpress-org/how-to-use-subversion/
 
     svn up
 
-### Different between local copy and the central repository
+### Different between the local copy and the central repository
 
     svn stat
     svn diff
