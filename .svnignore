@@ -1,6 +1,8 @@
 .git
 .idea
 .junie
+.claude
 .gitignore
 .svnignore
 README.md
+CLAUDE.md
