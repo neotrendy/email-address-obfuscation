@@ -104,6 +104,13 @@ For work in progress. Commit to Git as usual. Committing `trunk/` to SVN is opti
        svn ci -m "Tagging version X.Y.Z"
 
 5. Within a few minutes check the plugin page and that the download ZIP contains the new version: https://wordpress.org/plugins/email-address-obfuscation/
+6. Tag the release commit in Git (same name as the SVN tag, without `v`) and push the tag – `git push` alone does not push tags:
+
+       git tag -a X.Y.Z -m "Version X.Y.Z"
+       git push origin X.Y.Z
+       git ls-remote --tags origin    # the new tag must be listed
+
+   Tags of older versions can be added later with the commit hash: `git tag -a X.Y.Z -m "Version X.Y.Z" <commit>`.
 
 ## Plugin page assets
 
