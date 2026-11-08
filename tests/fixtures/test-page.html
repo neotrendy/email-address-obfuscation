@@ -1,0 +1,207 @@
+<!-- wp:paragraph -->
+<p>Manual test page for the Email Address Obfuscation plugin. See <code>docs/testing.md</code>. Each case states the expected result.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Email address</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Plain-text email address</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[obfuscate_email email="your@example.com"]
+<!-- /wp:shortcode -->
+
+<!-- wp:paragraph -->
+<p><em>Expected:</em> text <code>your@example.com</code>, not a link.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Clickable email address</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[obfuscate_email email="your@example.com" link=true]
+<!-- /wp:shortcode -->
+
+<!-- wp:paragraph -->
+<p><em>Expected:</em> link <code>your@example.com</code> to <code>mailto:your@example.com</code>, no tooltip.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">CSS classes</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[obfuscate_email email="your@example.com" link=true class="my-class another-class"]
+<!-- /wp:shortcode -->
+
+<!-- wp:paragraph -->
+<p><em>Expected:</em> link with <code>class="my-class another-class"</code>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Email subject</h3>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Link</h4>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[obfuscate_email email="your@example.com?subject=My custom email subject" link=true class="my-class another-class"]
+<!-- /wp:shortcode -->
+
+<!-- wp:paragraph -->
+<p><em>Expected:</em> link text is only <code>your@example.com</code>; the email client opens with the subject <code>My custom email subject</code>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Plain text</h4>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[obfuscate_email email='your@example.com?subject=My custom email subject']
+<!-- /wp:shortcode -->
+
+<!-- wp:paragraph -->
+<p><em>Expected:</em> text <code>your@example.com?subject=My custom email subject</code> (intended for use inside your own link).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Own link text</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><a href="mailto:[obfuscate_email email='your@example.com?subject=My custom email subject']">Email link</a> click on it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><em>Expected:</em> link <code>Email link</code>; the email client opens with the subject.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Email subject and body</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[obfuscate_email email="your@example.com?subject=My custom email subject&body=Custom email body" link=true class="my-class another-class"]
+<!-- /wp:shortcode -->
+
+<!-- wp:paragraph -->
+<p><em>Expected:</em> the email client opens with the subject <em>and</em> the body <code>Custom email body</code>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Invalid email addresses</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[obfuscate_email link='true' email='xxx your@example.com ']
+<!-- /wp:shortcode -->
+
+<!-- wp:shortcode -->
+[obfuscate_email link=true email="your@example"]
+<!-- /wp:shortcode -->
+
+<!-- wp:shortcode -->
+[obfuscate_email link=true]
+<!-- /wp:shortcode -->
+
+<!-- wp:paragraph -->
+<p><em>Expected:</em> nothing is displayed between this line and the previous heading.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Phone number</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Plain-text phone number</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[obfuscate_phone phone="+421 000 000 000"]
+<!-- /wp:shortcode -->
+
+<!-- wp:paragraph -->
+<p><em>Expected:</em> text <code>+421 000 000 000</code>, not a link.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Clickable phone number</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[obfuscate_phone phone="+421 000 000 000" link=true class="my-class"]
+<!-- /wp:shortcode -->
+
+<!-- wp:paragraph -->
+<p><em>Expected:</em> link <code>+421 000 000 000</code> to <code>tel:+421000000000</code> with <code>class="my-class"</code>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Own link text</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><a href="tel:[obfuscate_phone phone='+421000000000']">Call us</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><em>Expected:</em> link <code>Call us</code> to <code>tel:+421000000000</code>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Invalid phone numbers</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[obfuscate_phone phone="12" link=true]
+<!-- /wp:shortcode -->
+
+<!-- wp:shortcode -->
+[obfuscate_phone phone="0800 FLOWERS" link=true]
+<!-- /wp:shortcode -->
+
+<!-- wp:shortcode -->
+[obfuscate_phone link=true]
+<!-- /wp:shortcode -->
+
+<!-- wp:paragraph -->
+<p><em>Expected:</em> nothing is displayed between this line and the previous heading.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Security: CVE-2024-11935</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Stored XSS via the <code>class</code> attribute, fixed in 1.1.0. <em>Expected for all cases:</em> no JavaScript alert when the page loads or when you click or tab to the links; in the developer tools the links have only <code>href</code> and <code>class</code> attributes, and <code>class</code> contains the whole text including <code>onfocus</code>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Email</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[obfuscate_email email="patch@example.com" link='true' class='test"autofocus tabindex=1 onfocus="alert(1)']
+<!-- /wp:shortcode -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Email with subject</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[obfuscate_email email="patch@example.com?subject=My custom email subject&body=Test" link='true' class='test"autofocus tabindex=1 onfocus="alert(1)']
+<!-- /wp:shortcode -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Phone</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[obfuscate_phone phone="+421 000 000 000" link='true' class='test"autofocus tabindex=1 onfocus="alert(1)']
+<!-- /wp:shortcode -->

@@ -27,3 +27,8 @@ Desktop.ini
 /assets/*
 !/assets/.svnignore
 /tags/
+
+# Tests
+/vendor/
+/.wp-tests/
+.phpunit.result.cache

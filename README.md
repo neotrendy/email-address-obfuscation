@@ -1,40 +1,36 @@
 # Email Address Obfuscation
 
-## Plugin hosting
+WordPress plugin that protects email addresses and phone numbers from harvesting bots by encoding them as HTML entities, while keeping them readable for visitors.
 
-* SVN URL: https://plugins.svn.wordpress.org/email-address-obfuscation
-* Public URL: https://wordpress.org/plugins/email-address-obfuscation
-* SVN username is *neotrendy* and your password is the same as you use to log in to WordPress.org
+- Install from the WordPress Plugin Directory: https://wordpress.org/plugins/email-address-obfuscation/
+- Support: https://wordpress.org/support/plugin/email-address-obfuscation/
+- Requires WordPress 3.6+ and PHP 5.6+.
 
-## SVN
+## Usage
 
-Using Subversion with the WordPress Plugin Directory:
-https://developer.wordpress.org/plugins/wordpress-org/how-to-use-subversion/
+    [obfuscate_email email="your@example.com"]
+    [obfuscate_email email="your@example.com" link=true class="my-class"]
+    <a href="mailto:[obfuscate_email email='your@example.com?subject=Hello']">Write to us</a>
 
-### Update repository
+    [obfuscate_phone phone="+421 000 000 000"]
+    [obfuscate_phone phone="+421 000 000 000" link=true]
+    <a href="tel:[obfuscate_phone phone='+421000000000']">Call us</a>
 
-    svn up
+| Parameter | Description |
+|---|---|
+| `email` | Email address, optionally followed by a query string such as `?subject=...`. |
+| `phone` | Phone number with 3 to 15 digits, optionally starting with `+`. |
+| `link` | Optional. `true` outputs a clickable `mailto:` / `tel:` link. |
+| `class` | Optional. CSS classes for the link. |
 
-### Different between the local copy and the central repository
+Without `link=true` the shortcode outputs plain text (for email including the query string), so it can be used inside your own link. Invalid addresses and numbers produce no output. See [`trunk/readme.txt`](trunk/readme.txt) for details.
 
-    svn stat
-    svn diff
-    svn stat --no-ignore
+The encoding stops simple bots that read the page source, not bots that decode HTML.
 
-### Add files to the SVN
+## Repository
 
-    svn add .\trunk\filename
+This repository mirrors the WordPress.org SVN layout: the plugin itself is in [`trunk/`](trunk/). Notes for maintainers are in [`docs/maintaining.md`](docs/maintaining.md), testing (automated tests with `composer test` and the manual test page) in [`docs/testing.md`](docs/testing.md).
 
-### Ignore files from SVN
+## License
 
-    svn propset svn:ignore -F .svnignore .
-    svn propset svn:ignore -F assets/.svnignore assets/
-
-###  Check in changes to the central repository
-
-    svn ci -m "Write a comment"
-
-### Tagging new versions
-
-    svn cp trunk tags/1.2.0
-    svn ci -m "tagging version 1.2.0"
+[GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)

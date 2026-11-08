@@ -1,76 +1,124 @@
 === Email Address Obfuscation ===
 Contributors: neotrendy
 Donate link: https://paypal.me/neotrendy
-Tags: anti-spam, email, obfuscation, obfuscate, protect
-Requires at least: 2.5
+Tags: anti-spam, email, phone, obfuscation, protect
+Requires at least: 3.6
 Tested up to: 7.1
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 Requires PHP: 5.6
 License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.txt
 
-Email Address Obfuscation prevents email harvesting by hiding email address appearing in your pages, while remaining visible to your site visitors.
+Protects email addresses and phone numbers from harvesting bots by encoding them as HTML entities, while keeping them readable for visitors.
 
 == Description ==
 
-A lightweight plugin that protects email addresses from email-harvesting bots, by converting email addresses characters to HTML entities. Hide email from Spam Bots using a shortcode `[obfuscate_email]` and built-in WordPress function [antispambot()](https://developer.wordpress.org/reference/functions/antispambot/ "antispambot").
+Email Address Obfuscation is a lightweight plugin that adds the `[obfuscate_email]` and `[obfuscate_phone]` shortcodes. They encode the email address or phone number with the built-in WordPress function [antispambot()](https://developer.wordpress.org/reference/functions/antispambot/ "antispambot"): characters are randomly converted to HTML entities, so simple bots that scan the page source cannot read them. Browsers decode the entities, so visitors see the address or number as usual.
+
+The plugin uses no JavaScript, stores no data and does not connect to any external service.
 
 = Features =
 
-* Obfuscate plain email address
-* Obfuscate href mailto link in HTML anchor element
-* Support for custom CSS class
-* Support for email subject
+* Obfuscate a plain-text email address or phone number
+* Create an obfuscated clickable `mailto:` or `tel:` link
+* Use the shortcode inside your own link to set your own link text
+* Add custom CSS classes to the link
+* Add an email subject to the link
 
-= Usage =
+= Email address =
 
-**Obfuscate plain email address**
+**Plain-text email address**
 
-    [obfuscate_email email="your@email.com"]
+    [obfuscate_email email="your@example.com"]
 
-**Create clickable email address**
+**Clickable email address**
 
-    [obfuscate_email email="your@email.com" link=true]
+    [obfuscate_email email="your@example.com" link=true]
 
-**Add CSS class to the HTML anchor element**
+**Clickable email address with CSS classes**
 
-    [obfuscate_email email="your@email.com" link=true class="my-class another-class"]
+    [obfuscate_email email="your@example.com" link=true class="my-class another-class"]
 
-**Obfuscate email address with email subject**
+**Clickable email address with email subject**
 
-    [obfuscate_email email='your@email.com?subject=My custom email subject']
+    [obfuscate_email email='your@example.com?subject=My custom email subject' link=true]
 
-= Shortcode parameter =
+The subject is added to the `mailto:` link only; the link text is the email address. Other `mailto:` parameters can be added the same way, separated by `&`, for example `?subject=Hello&body=Hi there`.
 
-* `email` required - Email address.
-* `link` optional - Set true if you want to create clickable email address.
-* `class` optional - Add space separated list of classes.
+**Link with your own text**
+
+Without `link=true`, the shortcode outputs the email address including the subject as text, so you can use it inside your own link, for example in a Custom HTML block:
+
+    <a href="mailto:[obfuscate_email email='your@example.com?subject=Hello']">Write to us</a>
+
+= Phone number =
+
+**Plain-text phone number**
+
+    [obfuscate_phone phone="+421 000 000 000"]
+
+**Clickable phone number**
+
+    [obfuscate_phone phone="+421 000 000 000" link=true class="my-class"]
+
+The number is displayed as written. The `tel:` link contains only the digits and the leading `+`, e.g. `tel:+421000000000`.
+
+**Link with your own text**
+
+Write the number without spaces when you use it inside your own link, for example in a Custom HTML block:
+
+    <a href="tel:[obfuscate_phone phone='+421000000000']">Call us</a>
+
+= Shortcode parameters =
+
+* `email` (required for `[obfuscate_email]`) – The email address, optionally followed by a query string such as `?subject=...`. If the address is not valid, the shortcode outputs nothing.
+* `phone` (required for `[obfuscate_phone]`) – The phone number: 3 to 15 digits, optionally starting with `+`, separated by spaces or `-` `.` `/` `(` `)`. If the number is not valid, the shortcode outputs nothing.
+* `link` (optional) – Set to `true` to output a clickable link. Without it, the address or number is output as plain text.
+* `class` (optional) – Space-separated list of CSS classes for the link.
 
 == Frequently Asked Questions ==
 
 = How does it work? =
 
-The plugin converts email addresses characters from `email` parameter of `[obfuscate_email]` shortcode to HTML entities. Email addresses on your web page will be obfuscated (hidden) from bots, while keeping them visible to humans. In fact, there are no visible changes to your website for visitors.
+The shortcodes pass the email address or phone number to the WordPress function `antispambot()`, which randomly converts characters to HTML entities. Browsers display the text normally, so there are no visible changes for your visitors.
 
-= How can check if the plugin works? =
+= Does it stop all spam bots? =
 
-View source code of your page (press `Ctrl + U` in web browser) and look for the place, where an email address is placed. You should see decimal entities instead of email address.
+No. HTML-entity encoding stops simple harvesting bots that read the raw page source. Bots that decode HTML entities or render the page like a browser can still read the address or number.
 
-** Please note ** Inspector in developer tools automatically decode decimal and hexadecimal entities. You need to use *View source code*.
+= Where can I use the shortcodes? =
+
+Anywhere WordPress processes shortcodes, for example in posts and pages using the Shortcode block of the block editor, or in the classic editor.
+
+= How can I check that the plugin works? =
+
+Open the page source (`Ctrl + U` in most browsers) and find the email address. Instead of the readable address you should see plain characters mixed with HTML entities such as `&#64;`.
+
+Please note: the Inspector in browser developer tools decodes HTML entities automatically. Use *View page source* instead.
 
 == Screenshots ==
 
-1. Using shortcode in Gutenberg Block Editor.
-2. Displaying email on frontend.
-3. Obfuscated email address in source code.
+1. Using the shortcode in the block editor.
+2. Email address displayed on the front end.
+3. Obfuscated email address in the page source.
 
 == Changelog ==
+
+= 1.3.0 =
+* New: `[obfuscate_phone]` shortcode obfuscates phone numbers, optionally as a clickable `tel:` link.
+* Fix: Multiple `mailto:` parameters (e.g. `?subject=...&body=...`) were double-encoded and the email client did not receive them.
+* Fix: The link text showed the email subject; it now shows only the email address.
+* Fix: Invalid email addresses (e.g. containing spaces) are no longer repaired or output as an empty `mailto:` link; the shortcode outputs nothing.
+* Change: Removed the `title` attribute from the link (better accessibility).
+* Change: Corrected the minimum required WordPress version to 3.6.
+* Change: Translations are provided by translate.wordpress.org; the bundled Slovak translation was removed.
+* Security: Added protection against direct file access.
 
 = 1.2.0 =
 * Added support for email subject.
 
 = 1.1.0 =
-* Security Fix: Resolved a Stored Cross-Site Scripting (XSS) vulnerability in the `class` parameter of the shortcode, allowing Contributor+ users to inject malicious scripts. (CVE-2024-11935 | Reported by theviper17y)
+* Security Fix: Resolved a Stored Cross-Site Scripting (XSS) vulnerability in the `class` parameter of the shortcode, allowing Contributor+ users to inject malicious scripts. (CVE-2024-11935 | Reported by *theviper17y*)
 * Minor code improvements and optimizations.
 
 = 1.0.1 =
@@ -90,6 +138,15 @@ View source code of your page (press `Ctrl + U` in web browser) and look for the
 * Release Candidate.
 
 == Upgrade Notice ==
+
+= 1.3.0 =
+Adds the [obfuscate_phone] shortcode and fixes email subject handling. Links no longer have a title attribute and invalid email addresses are no longer displayed.
+
+= 1.2.0 =
+Added support for email subject. Includes the security fix from 1.1.0 (CVE-2024-11935) – update recommended.
+
+= 1.1.0 =
+Security fix: resolves a Stored Cross-Site Scripting (XSS) vulnerability in the shortcode `class` parameter (CVE-2024-11935). Update immediately.
 
 = 1.0.0 =
 Tested compatibility with WordPress 6.1.1. Added translation folder and POT file.

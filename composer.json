@@ -1,0 +1,16 @@
+{
+	"name": "neotrendy/email-address-obfuscation",
+	"description": "Development dependencies for the Email Address Obfuscation WordPress plugin. The plugin itself is in trunk/ and has no dependencies.",
+	"type": "project",
+	"license": "GPL-2.0-or-later",
+	"require-dev": {
+		"phpunit/phpunit": "^9.6",
+		"yoast/phpunit-polyfills": "^1.1"
+	},
+	"scripts": {
+		"test": "phpunit"
+	},
+	"config": {
+		"sort-packages": true
+	}
+}

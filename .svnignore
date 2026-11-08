@@ -6,3 +6,12 @@
 .svnignore
 README.md
 CLAUDE.md
+docs
+bin
+tests
+vendor
+.wp-tests
+composer.json
+composer.lock
+phpunit.xml.dist
+.phpunit.result.cache
